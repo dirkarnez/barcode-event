@@ -22,7 +22,12 @@
             }
             render() {
                 const { barcode } = this.state;
-                return barcode && <div>{barcode}</div>
+                return (
+                    <React.Fragment>
+                        <h2>Try with your barcode scanner</h2>
+                        { barcode && <div>{barcode}</div> }
+                    </React.Fragment>
+                )
             }
         }
     

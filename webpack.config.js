@@ -1,26 +1,22 @@
 const path = require('path');
-var isProduction = true;
+const distPath = path.join(__dirname, './dist');
+const TerserPlugin = require('terser-webpack-plugin');
+const isProduction = process.env.NODE_ENV === 'production';
 
-var distPath = path.join(__dirname, './dist');
-
-module.exports = {
+const config = {
+   mode: isProduction ? 'production' : 'development',
    entry: './src/index.ts',
    module: {
       rules: [
          {
-            test: /\.tsx?$/,
-            use: [
-               !isProduction && {
-                  loader: 'babel-loader'
-               },
-              'ts-loader'
-            ].filter(Boolean),
-            exclude: /node_modules/
-          },
+            test: /\.tsx?$/i,
+            use: 'babel-loader',
+            exclude: /node_modules/,
+         }
       ]
    },
    resolve: {
-      extensions: ['.tsx', '.ts', '.js']
+      extensions: ['.js', '.jsx', '.ts', '.tsx']
    },
    output: {
       filename: 'barcode-event.js',
@@ -28,12 +24,14 @@ module.exports = {
       library: 'barcodeEvent',
       libraryTarget: 'umd'
    }
-   , devServer: {
-      contentBase: distPath,
-      hot: true,
-      inline: true,
-      historyApiFallback: true,
-      stats: 'minimal',
-      clientLogLevel: 'warning'
-   }
 };
+
+if (isProduction) {
+   config.optimization = {
+     minimizer: [
+       new TerserPlugin(),
+     ],
+   };
+ }
+
+ module.exports = config;

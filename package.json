@@ -1,26 +1,25 @@
 {
   "name": "barcode-event",
   "version": "0.0.0",
-  "description": "BarcodeEvent",
-  "author": "alex.chan@clinic1st.com",
-  "main": "dist/index.js",
+  "description": "Barcode Event",
+  "author": "smalldirkalex@gmail.com",
+  "main": "dist/barcode-event.js",
   "types": "src/index.d.ts",
   "scripts": {
-    "build": "webpack --mode production",
-    "develop": "webpack --watch --progress --mode development",
-    "start": "webpack-dev-server --mode development --hot --progress --color --port 3000 --open",
+    "check-types": "tsc",
+    "build": "cross-env NODE_ENV=production webpack --color --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.3.0",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-typescript": "^7.3.3",
     "babel-loader": "^8.0.5",
-    "babel-plugin-minify-mangle-names": "^0.5.0",
-    "terser-webpack-plugin": "^1.2.2",
-    "ts-loader": "^5.3.3",
-    "typescript": "^3.2.4",
-    "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+    "cross-env": "^6.0.3",
+    "terser-webpack-plugin": "^1.2.3",
+    "typescript": "^3.4.5",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2"
   }
 }

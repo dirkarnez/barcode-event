@@ -1,12 +1,21 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es5",
+    "moduleResolution": "node",
+    "target": "esNext",
     "lib": ["es6", "es7", "dom"],
     "removeComments": true,
-    "sourceMap": true
+    "allowJs": false,
+    "skipLibCheck": true,
+    "emitDeclarationOnly": true,
+    "strict": true,
+    "declaration": true,
+    "declarationDir": "src"
   },
   "exclude": [
     "node_modules"
+  ],
+  "include": [
+    "src"
   ]
 }
