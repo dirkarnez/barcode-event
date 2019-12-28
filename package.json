@@ -1,6 +1,6 @@
 {
   "name": "barcode-event",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "description": "Barcode Event",
   "author": "smalldirkalex@gmail.com",
   "main": "dist/barcode-event.js",
@@ -21,5 +21,14 @@
     "typescript": "^3.4.5",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dirkarnez/barcode-event.git"
+  },
+  "keywords": [
+    "barcode",
+    "qrcode",
+    "qr"
+  ]
 }
