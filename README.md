@@ -1,6 +1,5 @@
 ﻿Barcode Event
 =============
-
 Barcode Event is an event-driven, framework-agnostic library capturing barcode input as simulated keystrokes, TypeScript supported
 
 # To build Barcode Event
@@ -10,7 +9,7 @@ npm run-script build
 ```
 
 # To start using Barcode Event
-Simply place the .js script just built to the HTML `<head>` tag, check out `examples`
+Simply place the .js script just built to the HTML `<head>` tag, check out `examples`. Then use barcode scanner or [`barcode-scanner-emulator.vbs`](barcode-scanner-emulator.vbs) (3 seconds delay for your preparation) to test
 
 # Prerequisites
 *  Occupied `window.barcodeEvent`
